@@ -1,0 +1,12 @@
+JobOffers.Frontend.Domain/bin
+JobOffers.Frontend.Domain/obj
+JobOffers.Frontend.Busines/bin
+JobOffers.Frontend.Busines/obj
+JobOffers.Frontend.Test/bin
+JobOffers.Frontend.Test/obj
+.vscode
+.vs
+.sonarqube
+JobOffers.Frontend.Domain/.sonarqube
+JobOffers.Frontend.Busines/.sonarqube
+JobOffers.Frontend.Test/.sonarqube
