@@ -1,0 +1,19 @@
+﻿@page "/test-button"
+
+<h3>TestButton</h3>
+
+<div style="text-align: center;">@TextToShow</div>
+<button @onclick="SetTextToShow">Click Me</button>
+
+@code {
+    public string? TextToShow { get; set; }
+
+    public void SetTextToShow()
+    {
+        TextToShow = "YES !";
+        JSRuntime?.InvokeVoidAsync("console.log", "Button Cliked !");
+    }
+
+    [Inject]
+    IJSRuntime? JSRuntime { get; set; }
+}
