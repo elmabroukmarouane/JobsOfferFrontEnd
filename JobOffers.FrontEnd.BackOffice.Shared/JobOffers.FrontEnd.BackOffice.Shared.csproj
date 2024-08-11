@@ -12,10 +12,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.AspNetCore.Components.Web" Version="8.0.7" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\JobOffers.Frontend.Busines\JobOffers.Frontend.Busines.csproj" />
   </ItemGroup>
 
@@ -23,6 +19,11 @@
     <Content Update="_Imports.razor">
       <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
     </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Components.Authorization" Version="8.0.7" />
+    <PackageReference Include="Microsoft.AspNetCore.Components.Web" Version="8.0.7" />
   </ItemGroup>
 
 </Project>

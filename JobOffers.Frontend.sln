@@ -11,7 +11,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "JobOffers.FrontEnd.BackOffi
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "JobOffers.FrontEnd.BackOffice.Web", "JobOffers.FrontEnd.BackOffice.Web\JobOffers.FrontEnd.BackOffice.Web.csproj", "{CA0768EA-4627-4076-8CC1-721B582D585C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JobOffers.FrontEnd.BackOffice.Maui", "JobOffers.FrontEnd.BackOffice.Maui\JobOffers.FrontEnd.BackOffice.Maui.csproj", "{4FADA36C-3CC9-4A57-86A3-6F1ED86FF6E8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "JobOffers.FrontEnd.BackOffice.Maui", "JobOffers.FrontEnd.BackOffice.Maui\JobOffers.FrontEnd.BackOffice.Maui.csproj", "{4FADA36C-3CC9-4A57-86A3-6F1ED86FF6E8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -18,7 +18,8 @@ namespace JobOffers.FrontEnd.BackOffice.Maui
 					fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
 				});
 
-			builder.Services.AddMauiBlazorWebView();
+            builder.Services.AddAuthorizationCore();
+            builder.Services.AddMauiBlazorWebView();
 
 #if DEBUG
 			builder.Services.AddBlazorWebViewDeveloperTools();
