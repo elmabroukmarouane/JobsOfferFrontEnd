@@ -2,11 +2,14 @@ JobOffers.Frontend.Domain/bin
 JobOffers.Frontend.Domain/obj
 JobOffers.Frontend.Busines/bin
 JobOffers.Frontend.Busines/obj
-JobOffers.Frontend.Test/bin
-JobOffers.Frontend.Test/obj
+JobOffers.Frontend.BackOffice.Shared/bin
+JobOffers.Frontend.BackOffice.Shared/obj
+JobOffers.Frontend.BackOffice.Test/bin
+JobOffers.Frontend.BackOffice.Test/obj
 .vscode
 .vs
 .sonarqube
 JobOffers.Frontend.Domain/.sonarqube
 JobOffers.Frontend.Busines/.sonarqube
-JobOffers.Frontend.Test/.sonarqube
+JobOffers.Frontend.BackOffice.Shared/.sonarqube
+JobOffers.Frontend.BackOffice.Test/.sonarqube
