@@ -9,13 +9,13 @@ namespace JobOffers.FrontEnd.BackOffice.Shared.Components.Layout
     {
         [Inject]
         private IJSRuntime? JSRuntime { get; set; }
-        //[Inject]
-        //private ITitleService? TitleService { get; set; }
-        //[Inject]
-        //private BaseSettingsApp? BaseSettingApp { get; set; }
-        //protected override async Task OnInitializedAsync() => await TitleService!.SetTitlePage(BaseSettingApp!.BaseTitleApp);
+        [Inject]
+        private ITitleService? TitleService { get; set; }
+        [Inject]
+        private BaseSettingsApp? BaseSettingApp { get; set; }
+        protected override async Task OnInitializedAsync() => await TitleService!.SetTitlePage(BaseSettingApp!.BaseTitleApp);
 
-		protected override async Task OnAfterRenderAsync(bool firstRender)
+        protected override async Task OnAfterRenderAsync(bool firstRender)
         {
             if (firstRender)
             {
