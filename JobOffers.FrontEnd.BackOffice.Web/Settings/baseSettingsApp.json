@@ -1,0 +1,8 @@
+{
+  "BaseSettingsApp": {
+    "ChosenEnviroment": "Dev",
+    "BaseUrlApiAndroidHttp": "http://apigateway.local/",
+    "BaseUrlApiWebHttp": "http://apigateway.local/",
+    "BaseTitleApp": "BackOffice Job Offers"
+  }
+}

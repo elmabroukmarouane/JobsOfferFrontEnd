@@ -4,6 +4,10 @@ JobOffers.Frontend.Busines/bin
 JobOffers.Frontend.Busines/obj
 JobOffers.Frontend.BackOffice.Shared/bin
 JobOffers.Frontend.BackOffice.Shared/obj
+JobOffers.Frontend.BackOffice.Web/bin
+JobOffers.Frontend.BackOffice.Web/obj
+JobOffers.Frontend.BackOffice.Maui/bin
+JobOffers.Frontend.BackOffice.Maui/obj
 JobOffers.Frontend.BackOffice.Test/bin
 JobOffers.Frontend.BackOffice.Test/obj
 .vscode
@@ -12,4 +16,6 @@ JobOffers.Frontend.BackOffice.Test/obj
 JobOffers.Frontend.Domain/.sonarqube
 JobOffers.Frontend.Busines/.sonarqube
 JobOffers.Frontend.BackOffice.Shared/.sonarqube
+JobOffers.Frontend.BackOffice.Web/.sonarqube
+JobOffers.Frontend.BackOffice.Maui/.sonarqube
 JobOffers.Frontend.BackOffice.Test/.sonarqube
