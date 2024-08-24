@@ -1,0 +1,11 @@
+﻿<MudDialog>
+    <DialogContent>
+        <MudForm @ref="Form" @bind-IsValid="@Success" @bind-Errors="@Errors">
+            <MudTextField T="string" Label="Domain Job" Placeholder="Enter the domain job !" Required="true" RequiredError="Domain Job is required!" @bind-Value=@DomainJobViewModel!.Domain />
+        </MudForm>
+    </DialogContent>
+    <DialogActions>
+        <MudButton Color="Color.Info" OnClick="Ok" Disabled="!Success || Errors.Count() > 0">@TitleOkButton</MudButton>
+        <MudButton Color="Color.Error" OnClick="Cancel">Cancel</MudButton>
+    </DialogActions>
+</MudDialog>

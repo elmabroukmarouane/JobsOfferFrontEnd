@@ -26,6 +26,13 @@ namespace JobOffers.Frontend.Busines.Services.Class
             SetTokenToHeader(token);
             var EntitiesResponse = await _httpClient.GetAsync(uri);
             var Entities = await EntitiesResponse.Content.ReadFromJsonAsync<IList<TEntityViewModel>>();
+            if(Entities is not null)
+            {
+                foreach (var entity in Entities)
+                {
+                    entity.StatusCode = EntitiesResponse.StatusCode;
+                }
+            }
             return Entities;
         }
 
@@ -34,6 +41,7 @@ namespace JobOffers.Frontend.Busines.Services.Class
             SetTokenToHeader(token);
             var EntitiesResponse = await _httpClient.GetAsync(uri);
             var Entity = await EntitiesResponse.Content.ReadFromJsonAsync<TEntityViewModel>();
+            if(Entity is not null) Entity.StatusCode = EntitiesResponse?.StatusCode ?? System.Net.HttpStatusCode.InternalServerError;
             return Entity;
         }
 
@@ -42,6 +50,13 @@ namespace JobOffers.Frontend.Busines.Services.Class
             SetTokenToHeader(token);
             var response = await _httpClient.PostAsJsonAsync(uri, filterDataModel);
             var entitiesResponse = await response.Content.ReadFromJsonAsync<IList<TEntityViewModel>>();
+            if (entitiesResponse is not null)
+            {
+                foreach (var entity in entitiesResponse)
+                {
+                    entity.StatusCode = response.StatusCode;
+                }
+            }
             return entitiesResponse;
         }
         #endregion
@@ -52,6 +67,7 @@ namespace JobOffers.Frontend.Busines.Services.Class
             SetTokenToHeader(token);
             var response = await _httpClient.PostAsJsonAsync(uri, entity);
             var entityResponse = await response.Content.ReadFromJsonAsync<TEntityViewModel>();
+            if (entityResponse is not null) entityResponse.StatusCode = response?.StatusCode ?? System.Net.HttpStatusCode.InternalServerError;
             return entityResponse;
         }
 
@@ -60,6 +76,13 @@ namespace JobOffers.Frontend.Busines.Services.Class
             SetTokenToHeader(token);
             var response = await _httpClient.PostAsJsonAsync(uri, entities);
             var entitiesResponse = await response.Content.ReadFromJsonAsync<IList<TEntityViewModel>>();
+            if (entitiesResponse is not null)
+            {
+                foreach (var entity in entitiesResponse)
+                {
+                    entity.StatusCode = response.StatusCode;
+                }
+            }
             return entitiesResponse;
         }
         #endregion
@@ -67,10 +90,18 @@ namespace JobOffers.Frontend.Busines.Services.Class
         #region UPDATE
         public async Task<TEntityViewModel?> UpdateAsync(string uri, string? token, TEntityViewModel entity)
         {
-            SetTokenToHeader(token);
-            var response = await _httpClient.PutAsJsonAsync(uri, entity);
-            var entityResponse = await response.Content.ReadFromJsonAsync<TEntityViewModel>();
-            return entityResponse;
+            try
+            {
+                SetTokenToHeader(token);
+                var response = await _httpClient.PutAsJsonAsync(uri, entity);
+                var entityResponse = await response.Content.ReadFromJsonAsync<TEntityViewModel>();
+                if (entityResponse is not null) entityResponse.StatusCode = response?.StatusCode ?? System.Net.HttpStatusCode.InternalServerError;
+                return entityResponse;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message, ex);
+            }
 
         }
 
@@ -79,6 +110,13 @@ namespace JobOffers.Frontend.Busines.Services.Class
             SetTokenToHeader(token);
             var response = await _httpClient.PutAsJsonAsync(uri, entities);
             var entitiesResponse = await response.Content.ReadFromJsonAsync<IList<TEntityViewModel>>();
+            if (entitiesResponse is not null)
+            {
+                foreach (var entity in entitiesResponse)
+                {
+                    entity.StatusCode = response.StatusCode;
+                }
+            }
             return entitiesResponse;
         }
         #endregion
@@ -93,6 +131,7 @@ namespace JobOffers.Frontend.Busines.Services.Class
                 Content = new StringContent(entityJsonSerialize, Encoding.UTF8, "application/json")
             });
             var entityResponse = await response.Content.ReadFromJsonAsync<TEntityViewModel>();
+            if (entityResponse is not null) entityResponse.StatusCode = response?.StatusCode ?? System.Net.HttpStatusCode.InternalServerError;
             return entityResponse;
         }
 
@@ -105,6 +144,13 @@ namespace JobOffers.Frontend.Busines.Services.Class
                 Content = new StringContent(entitiesJsonSerialize, Encoding.UTF8, "application/json")
             });
             var entitiesResponse = await response.Content.ReadFromJsonAsync<IList<TEntityViewModel>>();
+            if (entitiesResponse is not null)
+            {
+                foreach (var entity in entitiesResponse)
+                {
+                    entity.StatusCode = response.StatusCode;
+                }
+            }
             return entitiesResponse;
         }
         #endregion

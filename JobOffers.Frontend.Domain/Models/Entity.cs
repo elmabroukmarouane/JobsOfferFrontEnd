@@ -1,4 +1,6 @@
-﻿namespace JobOffers.Frontend.Domain.Models
+﻿using System.Net;
+
+namespace JobOffers.Frontend.Domain.Models
 {
     public class Entity
     {
@@ -7,5 +9,6 @@
         public DateTime? UpdateDate { get; set; }
         public string? CreatedBy { get; set; }
         public string? UpdatedBy { get; set; }
+        public HttpStatusCode? StatusCode { get; set; }
     }
 }
